@@ -9,7 +9,12 @@ class TodoForm extends Component {
   }
 
   handleSubmit = (e) => {
+    // stop the page reloading
     e.preventDefault();
+    // add the item to the todos array
+    this.props.addItem(this.state.name)
+    // clear out the form
+    this.setState({ name: ""})
   }
 
   render() {
